@@ -7,11 +7,10 @@ dni int unique,
 apellido varchar(30) not null,
 nombre varchar(30) not null,
 puesto varchar(30) not null,
-id_tarjeta int unique,
+id_tarjeta int unique auto_increment,
 user varchar(30) not null unique,
 pass varchar(30) not null,
-legajo int unique auto_increment,
-primary key (legajo)
+primary key (id_tarjeta)
 );
 
 create table Producto(
