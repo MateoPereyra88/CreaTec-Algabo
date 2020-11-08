@@ -33,7 +33,6 @@ insert into lecturasRFID values
 
 select * from lecturasRFID;
 
-
 create table accesoPersonal(
 uid int ,
 idmolinete int unique,
@@ -42,7 +41,6 @@ fecha date,
 hora time not null,
 primary key(idmolinete)
 );
-
 
 insert into accesoPersonal values
 ('1','1','entrada','1990-10-08','10:30'),
