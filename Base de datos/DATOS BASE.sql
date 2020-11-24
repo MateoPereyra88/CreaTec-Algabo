@@ -8,7 +8,7 @@ apellido varchar(30) not null,
 nombre varchar(30) not null,
 puesto varchar(30) not null,
 id_tarjeta int unique auto_increment,
-userr varchar(30) not null unique,
+usuario varchar(30) not null unique,
 pass varchar(30) not null,
 primary key (id_tarjeta)
 );
@@ -31,8 +31,6 @@ insert into lecturasRFID values
 ('1','1','1990-10-08','8:30'),
 ('2','2','2000-06-04','9:45');
 
-select * from lecturasRFID;
-
 create table accesoPersonal(
 uid int ,
 idmolinete int unique,
@@ -46,4 +44,7 @@ insert into accesoPersonal values
 ('1','1','entrada','1990-10-08','10:30'),
 ('2','2','salida','2000-06-04','12:45');
 
+select * from Empleado;
+select * from Producto;
+select * from lecturasRFID;
 select * from accesoPersonal;
