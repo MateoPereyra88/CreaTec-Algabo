@@ -15,7 +15,7 @@ primary key (id_tarjeta)
 
 create table Producto(
 codigo int unique,
-nom_prod varchar(50) not null
+nom_prod varchar(50) not null,
 primary key (codigo)
 );
 
