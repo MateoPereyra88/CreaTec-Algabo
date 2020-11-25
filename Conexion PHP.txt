@@ -2,4 +2,4 @@
 necesitaremos con el XAMPP ejecutar los servicios de MySQL y APACHE.
 2- Acto seguido arrastrar la carpeta del github, a xampp/htdocs.
 3- Para ingresar a la pagina pondremos:
-localhost/CreaTec-Algabo/Login/index.html
+localhost/CreaTec-Algabo/Pagina/index.html
