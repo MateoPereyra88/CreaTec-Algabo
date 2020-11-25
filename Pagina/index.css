@@ -19,7 +19,7 @@ body{
   text-transform: uppercase;
   font-weight: 500;
 }
-.box input[type = "submit"]{
+.box button[type = "button"]{
   border:0;
   background: none;
   display: block;
@@ -33,6 +33,7 @@ body{
   transition: 0.25s;
   cursor: pointer;
 }
-.box input[type = "submit"]:hover{
+.box button[type = "button"]:hover{
   background: #2ecc71;
 }
+

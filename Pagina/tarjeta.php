@@ -1,21 +1,20 @@
 	<?php
 	$servidor="localhost";
 	$bd = "CreaTecAlgabo";
-	$user ="root";
-	$pass = "";
+	$user="root";
+	$pass="";
 	$conexion=mysqli_connect($servidor,$user,$pass,$bd);
 
 	if ($conexion===false) {
 		die("error de conexion".mysqli_connect_error());
 	}
-	$sql = "select * from Empleado where ((IdTarjeta = '".$_POST['id_tarjeta']."')";
-	$sqli1 = "insert into lecturasRFID values (IdTarjeta,IdLector,Curdate(fecha),Curtime(hora))";
-	$sqli2 = "insert into accesoPersonal values (IdTarjeta,IdMolinete,Curdate(fecha),Curtime(hora))";
+	$sql = "select * from Empleado where (id_tarjeta = '".$_POST['IdTarjeta']."')";
+	$sqli1 ="insert into lecturasRFID (uid, idlector, fecha, hora) values ('".$_POST['IdTarjeta']."','".$_POST['IdLector']."',Curdate(),Curtime())";
+	$sqli2 ="insert into accesoPersonal (uid, idmolinete, sentido, fecha, hora ) values ('".$_POST['IdTarjeta']."','".$_POST['IdMolinete']."','".$_POST['Sentido']."',Curdate(),Curtime()";
 	$resultado = mysqli_query($conexion, $sql);
 	if(mysqli_num_rows($resultado) == 1){
-		mysqli_query($sqli1);
-		mysqli_query($sqli2);
-	else{
-		header('Location: ingreso fallido.html');
+		mysqli_query($conexion,$sqli1);
+		mysqli_query($conexion,$sqli2);
+		
 	}
 	?>
