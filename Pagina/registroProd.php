@@ -9,9 +9,6 @@
 		die("error de conexion".mysqli_connect_error());
 	}
 	$sql = "select * from Empleado where ((IdTarjeta = '".$_POST['id_tarjeta']."')";
-	if(IdTarjeta == $_POST['id_tarjeta']){
-		
-	}
 	$sqli1 = "insert into RegistroProducto values (id_ingreso,id_empleado,Curdate(fecha),Curtime(hora))";
 	$resultado = mysqli_query($conexion, $sql);
 	if(mysqli_num_rows($resultado) == 1){

@@ -20,29 +20,39 @@ primary key (codigo)
 );
 
 create table lecturasRFID(
+id_registro int unique auto_increment,
 uid int ,
 idlector int unique,
 fecha date,
 hora time not null,
-primary key(idlector)
+primary key(id_registro)
 );
 
-insert into lecturasRFID values
+/*insert into lecturasRFID values
 ('1','1','1990-10-08','8:30'),
-('2','2','2000-06-04','9:45');
+('2','2','2000-06-04','9:45');*/
 
 create table accesoPersonal(
+id_personal int unique auto_increment,
 uid int ,
 idmolinete int unique,
 sentido varchar(30) not null,
 fecha date,
 hora time not null,
-primary key(idmolinete)
+primary key(id_personal)
 );
 
-insert into accesoPersonal values
+/*insert into accesoPersonal values
 ('1','1','entrada','1990-10-08','10:30'),
-('2','2','salida','2000-06-04','12:45');
+('2','2','salida','2000-06-04','12:45');*/
+
+create table RegistroProducto(
+id_ingreso int unique auto_increment,
+id_empleado int unique,
+fecha date,
+hora time not null,
+primary key (id_ingreso)
+);
 
 select * from Empleado;
 select * from Producto;
