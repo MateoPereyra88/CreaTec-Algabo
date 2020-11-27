@@ -28,10 +28,6 @@ hora time not null,
 primary key(id_registro)
 );
 
-/*insert into lecturasRFID values
-('1','1','1990-10-08','8:30'),
-('2','2','2000-06-04','9:45');*/
-
 create table accesoPersonal(
 id_personal int unique auto_increment,
 uid int ,
@@ -42,19 +38,15 @@ hora time not null,
 primary key(id_personal)
 );
 
-/*insert into accesoPersonal values
-('1','1','entrada','1990-10-08','10:30'),
-('2','2','salida','2000-06-04','12:45');*/
-
-create table RegistroProducto(
+create table MateriaPrima(
 id_ingreso int unique auto_increment,
-id_empleado int unique,
+id_empleado int,
+proveedor varchar(50) not null,
 fecha date,
 hora time not null,
-primary key (id_ingreso)
+nom_mat varchar(50) not null,
+cod_mat int,
+cant int,
+primary key (id_ingreso),
+foreign key (id_empleado) references Empleado (id_tarjeta)
 );
-
-select * from Empleado;
-select * from Producto;
-select * from lecturasRFID;
-select * from accesoPersonal;

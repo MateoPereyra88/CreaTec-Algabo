@@ -8,12 +8,11 @@
 	if ($conexion===false) {
 		die("error de conexion".mysqli_connect_error());
 	}
-	$sql = "select * from Empleado where ((IdTarjeta = '".$_POST['id_tarjeta']."')";
-	$sqli1 = "insert into RegistroProducto values (id_ingreso,id_empleado,Curdate(fecha),Curtime(hora))";
-	$resultado = mysqli_query($conexion, $sql);
-	if(mysqli_num_rows($resultado) == 1){
+	$idtarjeta = $_GET["$tarjeta"];
+	$sqli = "insert into MateriaPrima (id_empleado, proveedor, fecha, hora, nom_mat, cant) values ('".$_POST['idtarjeta']."','".$_POST['proveedor']."',Curdate(),Curtime(),'".$_POST['producto'].",'".$_POST['cantidad'].")";
 		mysqli_query($sqli1);
+	}
 	else{
-		header('Location: ingreso fallido.html');
+		echo 'Error al importar los productos';
 	}
 	?>

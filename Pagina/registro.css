@@ -19,7 +19,7 @@ body{
   text-transform: uppercase;
   font-weight: 500;
 }
-.box input[name = "nombre"],.box input[name = "apellido"],.box input[name = "DNI"]{
+.box input[type = "text"],.box input[type = "number"]{
   border:0;
   background: none;
   display: inline;
@@ -33,11 +33,11 @@ body{
   border-radius: 24px;
   transition: 0.25s;
 }
-.box input[name = "nombre"]:focus,.box input[name = "apellido"]:focus,.box input[name = "DNI"]:focus{
+.box input[type = "text"]:focus,.box input[type = "number"]:focus{
   width: 210px;
   border-color: #2ecc71;
 }
-.box input[name = "registro"]{
+.box input[type = "submit"]{
   border:0;
   background: none;
   display: block;
