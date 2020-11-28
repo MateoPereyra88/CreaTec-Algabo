@@ -13,16 +13,18 @@ $resultado = mysqli_query($conexion, $sql);
 $tarjeta = "";
 if(mysqli_num_rows($resultado) == 1){
 	$fila = mysqli_fetch_array($resultado);
+
+	$sesion = fopen("sesion.txt", "w");
+	fwrite($sesion, $fila['id_tarjeta']);
+
 	if($fila['puesto'] == 'OPERARIO DEPOSITO')
 	{
-		$url ='"registroProd.php?$tarjeta='.$fila['id_tarjeta'].'"'
-			?>
-		<a href=<?php echo $url ?>></a>
-		<?php
 		header('Location: registroProd.html');
 	}
 	else
 		header('Location: hola.html');
+	
+	fclose($sesion);
 }
 else{
 	header('Location: adios.html');

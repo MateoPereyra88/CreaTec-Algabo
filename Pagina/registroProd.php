@@ -1,4 +1,4 @@
-	<?php
+<?php
 	$servidor="localhost";
 	$bd = "CreaTecAlgabo";
 	$user ="root";
@@ -8,11 +8,18 @@
 	if ($conexion===false) {
 		die("error de conexion".mysqli_connect_error());
 	}
-	$idtarjeta = $_GET["$tarjeta"];
-	$sqli = "insert into MateriaPrima (id_empleado, proveedor, fecha, hora, nom_mat, cant) values ('".$_POST['idtarjeta']."','".$_POST['proveedor']."',Curdate(),Curtime(),'".$_POST['producto'].",'".$_POST['cantidad'].")";
-		mysqli_query($sqli1);
-	}
-	else{
-		echo 'Error al importar los productos';
-	}
-	?>
+
+
+	$archivo = "sesion.txt";
+	$sesion = fopen($archivo, "r");
+	$idtarjeta = fread($sesion, filesize($archivo));
+
+
+	$sqli = "insert into MateriaPrima (id_empleado, proveedor, fecha, hora, nom_mat, cant) values ('".$idtarjeta."','".$_POST['proveedor']."',Curdate(),Curtime(),'".$_POST['producto']."','".$_POST['cantidad']."')";
+	if(mysqli_query($conexion, $sqli))
+		echo "producto registrado";
+	else
+		echo "error al registrar producto";
+
+	fclose($sesion)
+?>
