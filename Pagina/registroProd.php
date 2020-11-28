@@ -17,7 +17,7 @@
 
 	$sqli = "insert into MateriaPrima (id_empleado, proveedor, fecha, hora, nom_mat, cant) values ('".$idtarjeta."','".$_POST['proveedor']."',Curdate(),Curtime(),'".$_POST['producto']."','".$_POST['cantidad']."')";
 	if(mysqli_query($conexion, $sqli))
-		echo "producto registrado";
+		header('Location: registroProd.html');
 	else
 		echo "error al registrar producto";
 

@@ -10,7 +10,7 @@ if ($conexion===false) {
 }
 $sql = "select * from Empleado where ((usuario = '".$_POST['user']."') and (pass = '".$_POST['pass']."'))";
 $resultado = mysqli_query($conexion, $sql);
-$tarjeta = "";
+
 if(mysqli_num_rows($resultado) == 1){
 	$fila = mysqli_fetch_array($resultado);
 
