@@ -19,7 +19,7 @@
 	$text = $qrcode->text();
 
 
-	$sqli = "delete from Producto where nom_prod = ('".$text."')";
+	$sqli = "delete from Producto where codigo = ('".$text."')";
 	$sqli1 = "insert into egreso (id_empleado, id_producto, fecha, hora) values ('".$idtarjeta."','".$text."',Curdate(),Curtime())";
 	if(mysqli_query($conexion, $sqli))
 	{
