@@ -15,6 +15,6 @@
 	if(mysqli_num_rows($resultado) == 1){
 		mysqli_query($conexion,$sqli1);
 		mysqli_query($conexion,$sqli2);
-		header('Location: hola.html');
+		header('Location: holas.html');
 	}
 	?>

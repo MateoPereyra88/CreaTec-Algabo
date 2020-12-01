@@ -21,6 +21,10 @@ if(mysqli_num_rows($resultado) == 1){
 	{
 		header('Location: registroProd.html');
 	}
+	else if($fila['puesto'] == 'OPERARIO PRODUCCION')
+	{
+		header('Location: egresoProd.html');
+	}
 	else
 		header('Location: hola.html');
 	

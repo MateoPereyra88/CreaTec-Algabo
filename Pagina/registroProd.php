@@ -19,7 +19,7 @@
 	if(mysqli_query($conexion, $sqli))
 		header('Location: registroProd.html');
 	else
-		echo "error al registrar producto";
+		echo "error al registrar el producto";
 
 	fclose($sesion)
 ?>

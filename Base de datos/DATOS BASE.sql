@@ -50,3 +50,18 @@ cant int,
 primary key (id_ingreso),
 foreign key (id_empleado) references Empleado (id_tarjeta)
 );
+
+create table egreso(
+id_expedicion int unique auto_increment,
+id_empleado int,
+id_producto int,
+fecha date,
+hora time not null,
+primary key (id_expedicion),
+foreign key (id_empleado) references Empleado (id_tarjeta),
+foreign key (id_producto) references Producto (codigo)
+);
+
+select * from empleado;
+select * from producto;
+select * from egreso;
